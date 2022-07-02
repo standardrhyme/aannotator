@@ -9,10 +9,15 @@ def get_mp3():
     )
 
     options = {
-        "format": "bestaudio/bset",
+        "format": "bestaudio/best",
         "keepvideo": False,
         "outtmpL": f"{video_info['title']}.mp3",
     }
 
     with youtube_dl.YoutubeDL(options) as ydl:
         ydl.download([video_info["webpage_url"]])
+
+
+if __name__ == "__main__":
+    print("running")
+    get_mp3()
